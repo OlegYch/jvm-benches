@@ -28,7 +28,7 @@ public class EATest extends SimpleBenchmark {
         return null;
     }
 
-    private boolean aFalse = false;
+    private boolean enableEscape = true;
 
     private Object doWithEscape() {
         final Object[] objects1 = new Object[3];
@@ -40,7 +40,7 @@ public class EATest extends SimpleBenchmark {
             for (Iterator<Object> iterator1 = objects.iterator(); iterator1.hasNext(); ) {
                 o = iterator1.next();
                 a = new Object();
-                if (aFalse) {
+                if (enableEscape) {
                     objects1[0] = a;
                     objects1[1] = object;
                     objects1[2] = o;
@@ -68,7 +68,7 @@ public class EATest extends SimpleBenchmark {
             for (Iterator<Object> iterator1 = objects.iterator(); iterator1.hasNext(); ) {
                 o = iterator1.next();
                 a = new Object();
-                if (aFalse) {
+                if (enableEscape) {
                     objects1[0] = a;
                     objects1[1] = object;
                     objects1[2] = o;
@@ -95,7 +95,7 @@ public class EATest extends SimpleBenchmark {
             for (Iterator<Object> iterator1 = objects.iterator(); iterator1.hasNext(); ) {
                 o = iterator1.next();
                 a = new Object();
-                if (aFalse) {
+                if (enableEscape) {
                     objects1[0] = a;
                     objects1[1] = object;
                     objects1[2] = o;
