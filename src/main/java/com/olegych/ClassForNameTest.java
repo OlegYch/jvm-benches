@@ -16,7 +16,7 @@ public class ClassForNameTest extends SimpleBenchmark {
     @Param({"1", "2", "4", "8", "20"})
     public int threadCount;
 
-    public int count = 1000;
+    public int count = 10000;
 
     @Override
     protected void setUp() throws Exception {
