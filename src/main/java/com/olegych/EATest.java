@@ -28,7 +28,8 @@ public class EATest extends SimpleBenchmark {
         return null;
     }
 
-    private boolean enableEscape = true;
+//    @Param({"true", "false"})
+    public static  final boolean enableEscape = false;
 
     private Object doWithEscape() {
         final Object[] objects1 = new Object[3];
@@ -39,7 +40,7 @@ public class EATest extends SimpleBenchmark {
             object = iterator.next();
             for (Iterator<Object> iterator1 = objects.iterator(); iterator1.hasNext(); ) {
                 o = iterator1.next();
-                a = new Object();
+                a = allocate();
                 if (enableEscape) {
                     objects1[0] = a;
                     objects1[1] = object;
@@ -67,7 +68,7 @@ public class EATest extends SimpleBenchmark {
             object = iterator.next();
             for (Iterator<Object> iterator1 = objects.iterator(); iterator1.hasNext(); ) {
                 o = iterator1.next();
-                a = new Object();
+                a = allocate();
                 if (enableEscape) {
                     objects1[0] = a;
                     objects1[1] = object;
@@ -94,7 +95,7 @@ public class EATest extends SimpleBenchmark {
             object = iterator.next();
             for (Iterator<Object> iterator1 = objects.iterator(); iterator1.hasNext(); ) {
                 o = iterator1.next();
-                a = new Object();
+                a = allocate();
                 if (enableEscape) {
                     objects1[0] = a;
                     objects1[1] = object;
@@ -102,10 +103,11 @@ public class EATest extends SimpleBenchmark {
                 }
             }
         }
-        System.out.println("objects1[0] = " + objects1[0]);
-        System.out.println("objects1[0] = " + objects1[1]);
-        System.out.println("objects1[0] = " + objects1[2]);
         return null;
+    }
+
+    private Object allocate() {
+        return new Object();
     }
 
     @Override
